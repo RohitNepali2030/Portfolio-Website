@@ -1,13 +1,186 @@
 <!DOCTYPE html>
-<html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>Rohit Nepali Portfolio</title><link rel='stylesheet' href='style.css'><script defer src='script.js'></script></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Nepali | Portfolio</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Premium Google Font -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<nav class='glass'><div>Rohit Nepali</div><div><a href='#about'>About</a> <a href='#skills'>Skills</a> <a href='#projects'>Projects</a></div></nav>
-<section class='hero'>
-<div><h1>Rohit Nepali</h1><h2>Computer Engineer • AI Developer • IoT Enthusiast</h2><p>Building intelligent solutions with AI, Flutter, Flask and IoT.</p></div>
-<div class='glass photo'><img src='assets/profile.jpg'></div>
-</section>
-<section id='about' class='glass card'><h2>About</h2><p>Computer Engineering student passionate about AI, IoT and software development.</p></section>
-<section id='skills' class='glass card'><h2>Skills</h2><div class='grid'><div>HTML</div><div>CSS</div><div>JavaScript</div><div>Python</div><div>C++</div><div>Java</div><div>Flutter</div><div>Flask</div></div></section>
-<section id='projects'><div class='glass card'><h3>🌽 CornGuard</h3><p>AI-powered maize disease detection.</p></div><div class='glass card'><h3>🌱 Smart Plant Watering System</h3></div><div class='glass card'><h3>🏦 Bank Management System</h3></div></section>
-</body></html>
+
+    <!-- Ambient Glowing Background Blobs -->
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- Navigation Header -->
+    <header>
+        <a href="#home" class="logo">Rohit<span>.</span></a>
+        <nav>
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About & Education</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Home/Hero Section -->
+    <section id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-code"></i> Frontend Developer Intern
+                </div>
+                <h1>Hi, I'm <span>Rohit Nepali</span></h1>
+                <p>A Computer Engineering student focused on building clean, practical web projects, crafting functional user interfaces, and solving software problems.</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Let's Connect</a>
+                    <a href="#projects" class="btn btn-secondary">View Work</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:rohitnepali78@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="image-wrapper">
+                    <!-- Ensure your photo file is renamed to profile.png and placed in the same directory -->
+                    <img src="assets/profile.jpg" alt="Rohit Nepali">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Education Section -->
+    <section id="about">
+        <h2 class="section-title">About & Education</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Who I Am</h3>
+                <p style="margin-top: 1rem; color: var(--text-muted);">
+                    I am currently a Bachelor of Engineering student in Computer Science at Pokhara University. I specialize in core web systems alongside expanding technical proficiencies in frontend tools, interfaces, and cross-platform layouts. 
+                </p>
+                <div class="certificates-box" style="margin-top: 2rem;">
+                    <h4 style="margin-bottom: 1rem;"><i class="fas fa-certificate" style="color: var(--accent);"></i> Verified Certifications</h4>
+                    <div class="cert-item" style="margin-bottom: 1rem;">
+                        <strong>Git & GitHub Masterclass</strong> <span class="timeline-date">(2026)</span>
+                        <p class="timeline-subtitle">Technology Channel (YouTube) — Version control & workflows.</p>
+                    </div>
+                    <div class="cert-item">
+                        <strong>AI for Beginners</strong> <span class="timeline-date">(2024)</span>
+                        <p class="timeline-subtitle">Great Learning — Fundamentals & machine learning concepts.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Academic Journey</h3>
+                <div class="timeline" style="margin-top: 1.5rem;">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 – Present</div>
+                        <div class="timeline-title">Bachelor of Engineering, Computer</div>
+                        <div class="timeline-subtitle">School of Engineering, Pokhara University</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 – 2022</div>
+                        <div class="timeline-title">School Leaving Certificate (+2)</div>
+                        <div class="timeline-subtitle">Bhasker Memorial School, Pokhara</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020</div>
+                        <div class="timeline-title">Secondary Education Examination</div>
+                        <div class="timeline-subtitle">Bhasker Memorial School, Pokhara</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Technical Mastery</h2>
+        <div class="grid-3">
+            <div class="card skill-card">
+                <div class="skill-icon"><i class="fab fa-js-square" style="color: #f7df1e;"></i></div>
+                <h3>Frontend Engineering</h3>
+                <p>HTML5, CSS3, Modern UI Layouts, and Basic JavaScript execution mechanics.</p>
+            </div>
+            <div class="card skill-card">
+                <div class="skill-icon"><i class="fas fa-laptop-code" style="color: #3b82f6;"></i></div>
+                <h3>Programming Core</h3>
+                <p>Object-oriented logic development utilizing C, C++, and robust Java infrastructures.</p>
+            </div>
+            <div class="card skill-card">
+                <div class="skill-icon"><i class="fas fa-database" style="color: #00758f;"></i></div>
+                <h3>Databases & Tools</h3>
+                <p>MySQL schema builds, along with deployment environments like Git, GitHub, and VS Code.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Featured Engineering Projects</h2>
+        <div class="grid-3">
+            <!-- Project 1 -->
+            <div class="card project-card">
+                <div class="project-tag">2026</div>
+                <h3>Gym Landing Page</h3>
+                <p>A fully fluid, modern frontend landing system highlighting customized responsive design layouts built from scratch.</p>
+                <div class="project-tech"><span>HTML</span> <span>CSS</span></div>
+            </div>
+            <!-- Project 2 -->
+            <div class="card project-card">
+                <div class="project-tag">2025</div>
+                <h3>Smart Plant Watering System</h3>
+                <p>An IoT hardware solution engineered with ESP32 controllers and sensor telemetry arrays to auto-regulate agricultural irrigation metrics over mobile micro-apps.</p>
+                <div class="project-tech"><span>IoT</span> <span>ESP32</span> <span>Sensors</span></div>
+            </div>
+            <!-- Project 3 -->
+            <div class="card project-card">
+                <div class="project-tag">2024</div>
+                <h3>Bank Management Engine</h3>
+                <p>An administrative application executing custom financial ledger operations via unified JavaFX interfaces linked with backend databases.</p>
+                <div class="project-tech"><span>JavaFX</span> <span>MySQL</span> <span>OOP</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Let's collaborate on code</h3>
+                <p style="color: var(--text-muted); margin: 1rem 0 2rem 0;">
+                    I am actively seeking professional opportunities, internship teams, and software development groups to contribute to live engineering cycles.
+                </p>
+                <div class="contact-detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Phoolbari, Pokhara-11, Nepal</span>
+                </div>
+                <div class="contact-detail-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+977 9816399547</span>
+                </div>
+                <div class="contact-detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>rohitnepali78@gmail.com</span>
+                </div>
+            </div>
+            <div class="card">
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message feature ready! Real handling can be bound inside script.js.');">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email Address" required>
+                    <textarea placeholder="Your Message Content Here..." rows="5" required></textarea>
