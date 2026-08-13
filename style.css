@@ -1,0 +1,8 @@
+
+body{background:#0b1020;color:#fff;font-family:Arial,sans-serif;padding:20px}
+.glass{background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border-radius:20px;padding:20px}
+.hero{display:flex;justify-content:space-between;align-items:center;min-height:70vh}
+.photo img{width:300px;height:300px;object-fit:cover;border-radius:50%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.card{margin:20px 0}
+a{color:#7dd3fc}
