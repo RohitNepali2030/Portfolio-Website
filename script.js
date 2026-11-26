@@ -1,49 +1,38 @@
-document.addEventListener("DOMContentLoaded", () => {
-    
-    // 1. Mobile Hamburger Navigation Controller
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navLinksContainer = document.querySelector("nav");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    mobileMenu.addEventListener("click", () => {
-        navLinksContainer.classList.toggle("active");
-        // Dynamically toggle icons between bars and close X sign
-        const icon = mobileMenu.querySelector("i");
-        if(navLinksContainer.classList.contains("active")) {
-            icon.className = "fas fa-times";
-        } else {
-            icon.className = "fas fa-bars";
-        }
-    });
-
-    // Close menu when clicking any section item link
-    navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            navLinksContainer.classList.remove("active");
-            mobileMenu.querySelector("i").className = "fas fa-bars";
-        });
-    });
-
-    // 2. High Performance Scroll-Spy Highlight System
-    const sections = document.querySelectorAll("section");
-    
-    window.addEventListener("scroll", () => {
-        let currentSectionId = "";
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            // Evaluates current active section line based on viewport position
-            if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
-                currentSectionId = section.getAttribute("id");
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === `#${currentSectionId}`) {
-                link.classList.add("active");
-            }
-        });
-    });
+document.addEventListener("DOMContentLoaded",()=>{
+ const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+ $("#year").textContent=new Date().getFullYear();
+ const translations={
+ en:{navHome:"Home",navAbout:"About",navSkills:"Skills",navExperience:"Experience",navProjects:"Projects",navContact:"Contact",cyberButton:"Cyber Lab",eyebrow:"COMPUTER ENGINEERING · NETWORKING & INFRASTRUCTURE",hello:"HELLO, I'M",taglinePrefix:"Connecting systems.",heroDescription:"Computer Engineering student with a growing focus on Cisco networking, routing and switching, network troubleshooting and telecommunications infrastructure.",explore:"Explore my work ↗",contactMe:"Contact me ↗",location:"Pokhara, Nepal",networkOverview:"NETWORK OVERVIEW",conceptual:"CONCEPTUAL TOPOLOGY",aboutKicker:"THE ENGINEER",aboutTitle:"Curious by nature.<br><span>Connected by design.</span>",aboutText:"I am a Computer Engineering student at Pokhara University, interested in how networks connect people, services and systems. I enjoy learning through practical labs, troubleshooting and real-world infrastructure.",focusTitle:"Areas of focus",focusText:"Cisco networking, IP addressing, routing and switching, network fundamentals, infrastructure and telecommunications.",approachTitle:"How I work",approachText:"Learn the fundamentals, configure in a lab, observe the behaviour, troubleshoot methodically and document what works.",educationTitle:"Education",educationText:"Bachelor of Computer Engineering · Pokhara University.",skillsKicker:"TECHNICAL TOOLKIT",skillsTitle:"Building blocks of <span>my practice.</span>",skillsText:"A practical foundation that I continue to strengthen through coursework, Cisco labs and hands-on exploration.",experienceKicker:"FIELD EXPERIENCE",experienceTitle:"Learning beyond <span>the classroom.</span>",experienceText:"An internship experience with Nepal Telecom, observing customer services, FTTH provisioning and field maintenance workflows.",internshipAreas:"Areas explored",internshipOne:"Networking section and network fundamentals",internshipTwo:"CRM / customer care ticket workflows",internshipThree:"FTTH provisioning and CPG processes",internshipFour:"Field maintenance and fiber connectivity",internshipLearning:"Practical learning",internshipLearningText:"Observed service-ticket handling, customer connectivity checks, optical fiber infrastructure and field troubleshooting, connecting networking theory with operational telecom work.",projectsKicker:"SELECTED WORK",projectsTitle:"Projects with a <span>purpose.</span>",projectsText:"A selection of engineering and learning projects. Explore the interactive network tools below as well.",cornGuardText:"A mobile maize leaf disease detection concept designed to support early identification and practical guidance for farmers.",packetText:"Hands-on networking exercises covering device configuration, IP addressing, connectivity and network fundamentals.",portfolioText:"A responsive portfolio combining engineering interests, interactive networking demonstrations and a bilingual experience.",labKicker:"NETWORK LAB",labTitle:"Explore how networks <span>work.</span>",labText:"Try a few small, browser-based learning tools. These demonstrations run locally and do not connect to external networks.",subnetTitle:"IPv4 subnet quick check",subnetDesc:"Calculate basic network details.",ipLabel:"IPv4 address",calculate:"Calculate",ftthTitle:"FTTH connection path",ftthDesc:"Select a component to learn its role.",contactKicker:"START A CONVERSATION",contactTitle:"Let's connect <span>the dots.</span>",contactText:"Interested in networking, infrastructure, collaboration or an opportunity to learn and contribute? Feel free to reach out.",cyberIntro:"Explore a fictional network security console. Every scan and response is simulated in your browser."},
+ ne:{navHome:"गृहपृष्ठ",navAbout:"मेरो बारेमा",navSkills:"सीपहरू",navExperience:"अनुभव",navProjects:"परियोजनाहरू",navContact:"सम्पर्क",cyberButton:"साइबर ल्याब",eyebrow:"कम्प्युटर इन्जिनियरिङ · नेटवर्किङ तथा पूर्वाधार",hello:"नमस्कार, म हुँ",taglinePrefix:"प्रणालीहरू जोड्दै।",heroDescription:"सिस्को नेटवर्किङ, राउटिङ तथा स्विचिङ, नेटवर्क समस्या समाधान र दूरसञ्चार पूर्वाधारमा रुचि राख्ने कम्प्युटर इन्जिनियरिङ विद्यार्थी।",explore:"मेरो काम हेर्नुहोस् ↗",contactMe:"सम्पर्क गर्नुहोस् ↗",location:"पोखरा, नेपाल",networkOverview:"नेटवर्क अवलोकन",conceptual:"नेटवर्क संरचना",aboutKicker:"इन्जिनियर",aboutTitle:"जिज्ञासु सोच।<br><span>जोडिएको प्रविधि।</span>",aboutText:"म पोखरा विश्वविद्यालयमा कम्प्युटर इन्जिनियरिङ अध्ययनरत विद्यार्थी हुँ। नेटवर्कले मानिस, सेवा र प्रणालीलाई कसरी जोड्छ भन्ने विषयमा मेरो विशेष रुचि छ।",focusTitle:"मुख्य रुचिका क्षेत्र",focusText:"सिस्को नेटवर्किङ, IP एड्रेसिङ, राउटिङ तथा स्विचिङ, नेटवर्कका आधारभूत कुरा र दूरसञ्चार।",approachTitle:"मेरो कार्यशैली",approachText:"आधारभूत कुरा सिक्ने, ल्याबमा कन्फिगर गर्ने, व्यवहार अवलोकन गर्ने र व्यवस्थित रूपमा समस्या समाधान गर्ने।",educationTitle:"शिक्षा",educationText:"कम्प्युटर इन्जिनियरिङमा स्नातक · पोखरा विश्वविद्यालय।",skillsKicker:"प्राविधिक सीप",skillsTitle:"मेरो अभ्यासका <span>आधारहरू।</span>",skillsText:"पाठ्यक्रम, सिस्को ल्याब र व्यावहारिक अभ्यासबाट निरन्तर विकास गर्दै गरेका सीपहरू।",experienceKicker:"कार्य अनुभव",experienceTitle:"कक्षाकोठाभन्दा <span>बाहिरको सिकाइ।</span>",experienceText:"नेपाल टेलिकममा ग्राहक सेवा, FTTH सेवा जडान र फिल्ड मर्मतसम्भारका कार्यप्रवाह अवलोकन गरेको इन्टर्नशिप अनुभव।",internshipAreas:"अध्ययन गरिएका क्षेत्र",internshipOne:"नेटवर्किङ शाखा र नेटवर्कका आधारभूत कुरा",internshipTwo:"CRM तथा ग्राहक सेवा टिकट प्रक्रिया",internshipThree:"FTTH सेवा जडान तथा CPG प्रक्रिया",internshipFour:"फिल्ड मर्मत र फाइबर कनेक्टिभिटी",internshipLearning:"व्यावहारिक सिकाइ",internshipLearningText:"सेवा टिकट व्यवस्थापन, ग्राहक कनेक्टिभिटी जाँच, अप्टिकल फाइबर पूर्वाधार र फिल्ड समस्या समाधान अवलोकन गर्दै नेटवर्किङ सिद्धान्तलाई दूरसञ्चार कार्यसँग जोड्ने अवसर पाएँ।",projectsKicker:"छनोट गरिएका काम",projectsTitle:"उद्देश्यसहितका <span>परियोजनाहरू।</span>",projectsText:"केही इन्जिनियरिङ तथा सिकाइ परियोजनाहरू। तलका अन्तरक्रियात्मक नेटवर्क उपकरणहरू पनि प्रयोग गर्नुहोस्।",cornGuardText:"किसानलाई मकैको पातको रोग चाँडै पहिचान गर्न र व्यावहारिक सुझाव दिन सहयोग गर्ने मोबाइल अवधारणा।",packetText:"डिभाइस कन्फिगरेसन, IP एड्रेसिङ, कनेक्टिभिटी र नेटवर्कका आधारभूत विषय समेटिएका अभ्यासहरू।",portfolioText:"इन्जिनियरिङ रुचि, अन्तरक्रियात्मक नेटवर्क प्रदर्शन र दुई भाषाको अनुभव समेटिएको वेबसाइट।",labKicker:"नेटवर्क ल्याब",labTitle:"नेटवर्क कसरी <span>काम गर्छ बुझ्नुहोस्।</span>",labText:"ब्राउजरमै चल्ने केही सिकाइ उपकरण प्रयोग गर्नुहोस्। यी प्रदर्शनले बाह्य नेटवर्कमा जडान गर्दैनन्।",subnetTitle:"IPv4 सबनेट जाँच",subnetDesc:"नेटवर्कका आधारभूत विवरण निकाल्नुहोस्।",ipLabel:"IPv4 ठेगाना",calculate:"गणना गर्नुहोस्",ftthTitle:"FTTH जडान मार्ग",ftthDesc:"कम्पोनेन्टको भूमिका जान्न चयन गर्नुहोस्।",contactKicker:"सम्पर्क सुरु गर्नुहोस्",contactTitle:"सम्पर्क <span>गरौँ।</span>",contactText:"नेटवर्किङ, पूर्वाधार, सहकार्य वा सिक्ने र योगदान गर्ने अवसरबारे कुरा गर्न चाहनुहुन्छ भने सम्पर्क गर्नुहोस्।",cyberIntro:"काल्पनिक नेटवर्क सुरक्षा कन्सोल अन्वेषण गर्नुहोस्। सबै स्क्यान र प्रतिक्रियाहरू ब्राउजरमै सिमुलेट गरिन्छन्."}
+ };
+ let lang="en";
+ function setLanguage(next){lang=next;document.documentElement.lang=next;$$("[data-i18n]").forEach(el=>{const v=translations[next][el.dataset.i18n];if(v!==undefined)el.innerHTML=v});$("#lang-switch").textContent=next==="en"?"नेपाली":"English";try{localStorage.setItem("portfolio-language",next)}catch(e){}}
+ try{const saved=localStorage.getItem("portfolio-language");if(saved==="ne")setLanguage("ne")}catch(e){}
+ $("#lang-switch").addEventListener("click",()=>setLanguage(lang==="en"?"ne":"en"));
+ const phrases={en:["Building reliable networks.","Configuring Cisco devices.","Troubleshooting connectivity.","Exploring telecom infrastructure."],ne:["भरपर्दो नेटवर्क निर्माण गर्दै।","सिस्को उपकरण कन्फिगर गर्दै।","कनेक्टिभिटी समस्या समाधान गर्दै।","दूरसञ्चार पूर्वाधार बुझ्दै।"]};
+ let phraseIndex=0,charIndex=0,deleting=false;
+ function type(){const el=$("#typewriter");if(!el)return;const list=phrases[lang],word=list[phraseIndex%list.length];el.textContent=word.slice(0,charIndex);let delay=deleting?38:70;if(!deleting&&charIndex<word.length){charIndex++;}else if(!deleting){deleting=true;delay=1650;}else if(charIndex>0){charIndex--; }else{deleting=false;phraseIndex=(phraseIndex+1)%list.length;delay=300;}setTimeout(type,delay)}
+ type();
+ $("#menu-button").addEventListener("click",()=>$("#main-nav").classList.toggle("open"));
+ $$("#main-nav a").forEach(a=>a.addEventListener("click",()=>$("#main-nav").classList.remove("open")));
+ const ftth={olt:["OLT · Optical Line Terminal","Provider-side equipment that manages optical links and connects the access network to subscriber ONTs."],splitter:["Optical splitter","A passive component that divides one optical signal across multiple fiber connections without requiring local power."],ont:["ONT · Optical Network Terminal","Customer-premises equipment that terminates the optical fiber and presents a service connection to the home or business."]};
+ $$("[data-ftth]").forEach(btn=>btn.addEventListener("click",()=>{$$("[data-ftth]").forEach(b=>b.classList.toggle("selected",b===btn));const item=ftth[btn.dataset.ftth];$("#ftth-explain").innerHTML="<strong>"+item[0]+"</strong><p>"+item[1]+"</p>"}));
+ function ipToNum(ip){const parts=ip.split(".");if(parts.length!==4||parts.some(p=>!/^\d{1,3}$/.test(p)||Number(p)>255))return null;return parts.reduce((n,p)=>(n*256+Number(p))>>>0,0)>>>0}
+ function numToIp(n){return[(n>>>24)&255,(n>>>16)&255,(n>>>8)&255,n&255].join(".")}
+ $("#calculate-subnet").addEventListener("click",()=>{const ip=ipToNum($("#ip-input").value.trim()),prefix=Number($("#cidr-input").value);const out=$("#subnet-results");if(ip===null||!Number.isInteger(prefix)||prefix<0||prefix>32){out.innerHTML='<p class="terminal-warn">Enter a valid IPv4 address and CIDR prefix from 0 to 32.</p>';return}const mask=prefix===0?0:(0xffffffff<<(32-prefix))>>>0;const network=(ip&mask)>>>0,broadcast=(network|(~mask>>>0))>>>0;let hosts=prefix===32?1:prefix===31?2:Math.max(0,Math.pow(2,32-prefix)-2);const values=[["NETWORK",numToIp(network)],["SUBNET MASK",numToIp(mask)],["BROADCAST",numToIp(broadcast)],["USABLE HOSTS",hosts.toLocaleString()]];out.innerHTML=values.map(([k,v])=>"<div><small>"+k+"</small><b>"+v+"</b></div>").join("")});
+ const overlay=$("#cyber-overlay"),terminal=$("#terminal-output"),input=$("#terminal-input");
+ function openCyber(){overlay.classList.add("open");overlay.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";setTimeout(()=>input.focus(),100)}
+ function closeCyber(){overlay.classList.remove("open");overlay.setAttribute("aria-hidden","true");document.body.style.overflow="";$("#open-cyber").focus()}
+ $("#open-cyber").addEventListener("click",openCyber);$("#close-cyber").addEventListener("click",closeCyber);overlay.addEventListener("click",e=>{if(e.target===overlay)closeCyber()});document.addEventListener("keydown",e=>{if(e.key==="Escape"&&overlay.classList.contains("open"))closeCyber()});
+ const commands={
+ help:[["AVAILABLE DEMO COMMANDS","success"],["help          Show this command list","normal"],["scan          Simulate discovery of fictional lab hosts","normal"],["firewall      Display simulated firewall policy","normal"],["trace         Show a fictional route path","normal"],["status        Show lab environment status","normal"],["clear         Clear terminal output","normal"],["exit          Close Cyber Lab","normal"]],
+ scan:[["Starting simulated discovery on LAB-NET 192.0.2.0/24 ...","success"],["192.0.2.10  ROUTER-LAB   ONLINE   0.8 ms","normal"],["192.0.2.20  SWITCH-LAB   ONLINE   1.1 ms","normal"],["192.0.2.30  WEB-SERVER  ONLINE   2.4 ms","normal"],["192.0.2.40  CLIENT-01   ONLINE   1.7 ms","normal"],["Demo complete: 4 fictional hosts discovered. No real network was contacted.","success"]],
+ firewall:[["SIMULATED FIREWALL STATUS","success"],["Default inbound policy : DENY","normal"],["Established sessions  : ALLOW","normal"],["Unsolicited inbound    : BLOCK","normal"],["Logging                : ENABLED","normal"],["This is illustrative output, not a real firewall inspection.","warn"]],
+ trace:[["Tracing fictional route to demo.example ...","success"],["1  192.0.2.1     1 ms   LAB-GATEWAY","normal"],["2  198.51.100.1  8 ms   DEMO-TRANSIT","normal"],["3  203.0.113.8  14 ms   DEMO-EDGE","normal"],["Trace complete. Documentation-only address ranges are used.","success"]],
+ status:[["CYBER LAB STATUS","success"],["Environment : Browser-only simulation","normal"],["External I/O : Disabled","normal"],["Target scope : Fictional lab devices","normal"],["Mode : Ethical learning demonstration","normal"]]
+ };
+ function printLine(text,kind="normal"){const p=document.createElement("p");p.textContent=text;p.className=kind==="success"?"terminal-success":kind==="warn"?"terminal-warn":"";terminal.appendChild(p);terminal.scrollTop=terminal.scrollHeight}
+ function runCommand(raw){const cmd=raw.trim().toLowerCase();if(!cmd)return;printLine("visitor@cyberlab:~$ "+raw,"success");if(cmd==="clear"){terminal.innerHTML="";return}if(cmd==="exit"){closeCyber();return}const lines=commands[cmd];if(!lines){printLine("Command not found. Type help to see the available demo commands.","warn");return}lines.forEach(([line,kind])=>printLine(line,kind))}
+ $("#terminal-form").addEventListener("submit",e=>{e.preventDefault();runCommand(input.value);input.value=""});
+ $$("[data-command]").forEach(btn=>btn.addEventListener("click",()=>{if(btn.dataset.command==="clear"){terminal.innerHTML="";return}runCommand(btn.dataset.command)}));
 });
