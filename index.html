@@ -1,186 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohit Nepali | Portfolio</title>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <!-- Premium Google Font -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Link to External CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f8fb">
+  <meta name="description" content="Rohit Nepali — Computer Engineering student focused on networking, infrastructure, Cisco technologies and telecommunications.">
+  <title>Rohit Nepali | Networking & Infrastructure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="site-header">
+    <a class="brand" href="#home">RN<span>.</span></a>
+    <nav id="main-nav" class="main-nav">
+      <a href="#home" data-i18n="navHome">Home</a><a href="#about" data-i18n="navAbout">About</a><a href="#skills" data-i18n="navSkills">Skills</a><a href="#experience" data-i18n="navExperience">Experience</a><a href="#projects" data-i18n="navProjects">Projects</a><a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-switch" id="lang-switch" aria-label="Switch language">नेपाली</button>
+      <button class="icon-button menu-button" id="menu-button" aria-label="Open menu">☰</button>
+      <button class="cyber-entry" id="open-cyber">⌁ <span data-i18n="cyberButton">Cyber Lab</span></button>
+    </div>
+  </header>
 
-    <!-- Ambient Glowing Background Blobs -->
-    <div class="ambient-glow"></div>
-    <div class="ambient-glow-2"></div>
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span><span data-i18n="eyebrow">COMPUTER ENGINEERING · NETWORKING & INFRASTRUCTURE</span></div>
+        <p class="hello" data-i18n="hello">HELLO, I'M</p>
+        <h1>Rohit <span>Nepali.</span></h1>
+        <h2 class="hero-tagline"><span data-i18n="taglinePrefix">Connecting systems.</span><br><span class="accent-line"><span id="typewriter">Building reliable networks.</span><i class="typing-caret"></i></span></h2>
+        <p class="hero-description" data-i18n="heroDescription">Computer Engineering student with a growing focus on Cisco networking, routing and switching, network troubleshooting and telecommunications infrastructure.</p>
+        <div class="hero-buttons"><a class="button button-primary" href="#projects" data-i18n="explore">Explore my work ↗</a><a class="button button-secondary" href="mailto:rohitnepali78@gmail.com" data-i18n="contactMe">Contact me ↗</a></div>
+        <div class="hero-meta"><span>⌖ <span data-i18n="location">Pokhara, Nepal</span></span><span>◇ Pokhara University</span></div>
+      </div>
 
-    <!-- Navigation Header -->
-    <header>
-        <a href="#home" class="logo">Rohit<span>.</span></a>
-        <nav>
-            <a href="#home" class="nav-link active">Home</a>
-            <a href="#about" class="nav-link">About & Education</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
+      <div class="topology-card" aria-label="Illustrated network topology">
+        <div class="topology-head"><span><i class="live-dot"></i><span data-i18n="networkOverview">NETWORK OVERVIEW</span></span><small data-i18n="conceptual">CONCEPTUAL TOPOLOGY</small></div>
+        <div class="topology-stage">
+          <svg class="network-lines" viewBox="0 0 600 390" preserveAspectRatio="none" aria-hidden="true">
+            <path class="wire" d="M300 52 V108 M300 164 V205 M300 205 L130 300 M300 205 V300 M300 205 L470 300"/>
+            <path class="wire wire-glow" d="M300 52 V108 M300 164 V205 M300 205 L130 300 M300 205 V300 M300 205 L470 300"/>
+            <circle class="packet p1" r="5"><animateMotion dur="3.4s" repeatCount="indefinite" path="M300 52 V108"/></circle>
+            <circle class="packet p2" r="5"><animateMotion dur="4s" repeatCount="indefinite" path="M300 164 V205 L130 300"/></circle>
+            <circle class="packet p3" r="5"><animateMotion dur="3.8s" repeatCount="indefinite" path="M300 164 V205 L470 300"/></circle>
+          </svg>
+          <div class="device internet"><b>◎</b><strong>INTERNET</strong></div>
+          <div class="device router"><b>➜</b><strong>ROUTER</strong></div>
+          <div class="device switch"><b class="switch-glyph"><i></i><i></i><i></i></b><strong>SWITCH</strong></div>
+          <div class="device endpoint endpoint-left"><b>▱</b><strong>CLIENT 01</strong></div>
+          <div class="device endpoint endpoint-mid"><b>▱</b><strong>SERVER</strong></div>
+          <div class="device endpoint endpoint-right"><b>▱</b><strong>CLIENT 02</strong></div>
         </div>
-    </header>
-
-    <!-- Home/Hero Section -->
-    <section id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-code"></i> Frontend Developer Intern
-                </div>
-                <h1>Hi, I'm <span>Rohit Nepali</span></h1>
-                <p>A Computer Engineering student focused on building clean, practical web projects, crafting functional user interfaces, and solving software problems.</p>
-                <div class="btn-group">
-                    <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Let's Connect</a>
-                    <a href="#projects" class="btn btn-secondary">View Work</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="mailto:rohitnepali78@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="hero-image-container">
-                <div class="image-wrapper">
-                    <!-- Ensure your photo file is renamed to profile.png and placed in the same directory -->
-                    <img src="assets/profile.jpg" alt="Rohit Nepali">
-                </div>
-            </div>
-        </div>
+        <div class="topology-foot"><span>01 / ROUTING</span><span>02 / SWITCHING</span><span>03 / CONNECTIVITY</span></div>
+      </div>
+      <div class="hero-bottomline"><span>LEARN</span><b>•</b><span>CONFIGURE</span><b>•</b><span>TROUBLESHOOT</span><b>•</b><span>INNOVATE</span></div>
     </section>
 
-    <!-- About & Education Section -->
-    <section id="about">
-        <h2 class="section-title">About & Education</h2>
-        <div class="grid-2">
-            <div class="card">
-                <h3>Who I Am</h3>
-                <p style="margin-top: 1rem; color: var(--text-muted);">
-                    I am currently a Bachelor of Engineering student in Computer Science at Pokhara University. I specialize in core web systems alongside expanding technical proficiencies in frontend tools, interfaces, and cross-platform layouts. 
-                </p>
-                <div class="certificates-box" style="margin-top: 2rem;">
-                    <h4 style="margin-bottom: 1rem;"><i class="fas fa-certificate" style="color: var(--accent);"></i> Verified Certifications</h4>
-                    <div class="cert-item" style="margin-bottom: 1rem;">
-                        <strong>Git & GitHub Masterclass</strong> <span class="timeline-date">(2026)</span>
-                        <p class="timeline-subtitle">Technology Channel (YouTube) — Version control & workflows.</p>
-                    </div>
-                    <div class="cert-item">
-                        <strong>AI for Beginners</strong> <span class="timeline-date">(2024)</span>
-                        <p class="timeline-subtitle">Great Learning — Fundamentals & machine learning concepts.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h3>Academic Journey</h3>
-                <div class="timeline" style="margin-top: 1.5rem;">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2023 – Present</div>
-                        <div class="timeline-title">Bachelor of Engineering, Computer</div>
-                        <div class="timeline-subtitle">School of Engineering, Pokhara University</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2020 – 2022</div>
-                        <div class="timeline-title">School Leaving Certificate (+2)</div>
-                        <div class="timeline-subtitle">Bhasker Memorial School, Pokhara</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2020</div>
-                        <div class="timeline-title">Secondary Education Examination</div>
-                        <div class="timeline-subtitle">Bhasker Memorial School, Pokhara</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="content-section section-wrap" id="about">
+      <div class="section-kicker">01 / <span data-i18n="aboutKicker">THE ENGINEER</span></div>
+      <div class="section-heading"><h2 data-i18n="aboutTitle">Curious by nature.<br><span>Connected by design.</span></h2><p data-i18n="aboutText">I am a Computer Engineering student at Pokhara University, interested in how networks connect people, services and systems. I enjoy learning through practical labs, troubleshooting and real-world infrastructure.</p></div>
+      <div class="info-grid">
+        <article class="info-card"><span class="card-number">01</span><h3 data-i18n="focusTitle">Areas of focus</h3><p data-i18n="focusText">Cisco networking, IP addressing, routing and switching, network fundamentals, infrastructure and telecommunications.</p></article>
+        <article class="info-card"><span class="card-number">02</span><h3 data-i18n="approachTitle">How I work</h3><p data-i18n="approachText">Learn the fundamentals, configure in a lab, observe the behaviour, troubleshoot methodically and document what works.</p></article>
+        <article class="info-card"><span class="card-number">03</span><h3 data-i18n="educationTitle">Education</h3><p data-i18n="educationText">Bachelor of Computer Engineering · Pokhara University.</p></article>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2 class="section-title">Technical Mastery</h2>
-        <div class="grid-3">
-            <div class="card skill-card">
-                <div class="skill-icon"><i class="fab fa-js-square" style="color: #f7df1e;"></i></div>
-                <h3>Frontend Engineering</h3>
-                <p>HTML5, CSS3, Modern UI Layouts, and Basic JavaScript execution mechanics.</p>
-            </div>
-            <div class="card skill-card">
-                <div class="skill-icon"><i class="fas fa-laptop-code" style="color: #3b82f6;"></i></div>
-                <h3>Programming Core</h3>
-                <p>Object-oriented logic development utilizing C, C++, and robust Java infrastructures.</p>
-            </div>
-            <div class="card skill-card">
-                <div class="skill-icon"><i class="fas fa-database" style="color: #00758f;"></i></div>
-                <h3>Databases & Tools</h3>
-                <p>MySQL schema builds, along with deployment environments like Git, GitHub, and VS Code.</p>
-            </div>
-        </div>
+    <section class="content-section section-wrap" id="skills">
+      <div class="section-kicker">02 / <span data-i18n="skillsKicker">TECHNICAL TOOLKIT</span></div>
+      <div class="section-heading"><h2 data-i18n="skillsTitle">Building blocks of <span>my practice.</span></h2><p data-i18n="skillsText">A practical foundation that I continue to strengthen through coursework, Cisco labs and hands-on exploration.</p></div>
+      <div class="skills-grid">
+        <article class="skill-card"><div class="skill-symbol">⌘</div><h3>Networking</h3><p>TCP/IP · IPv4 · Subnetting · OSI & TCP/IP models · LAN/WAN</p></article>
+        <article class="skill-card"><div class="skill-symbol">⇄</div><h3>Routing & Switching</h3><p>Cisco IOS fundamentals · VLAN concepts · Static routing · Packet Tracer</p></article>
+        <article class="skill-card"><div class="skill-symbol">⌁</div><h3>Infrastructure</h3><p>FTTH concepts · OLT / ONT · Fiber optics · Basic troubleshooting</p></article>
+        <article class="skill-card"><div class="skill-symbol">⌨</div><h3>Programming & Tools</h3><p>C · C++ · Java · Python fundamentals · Git · VS Code</p></article>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title">Featured Engineering Projects</h2>
-        <div class="grid-3">
-            <!-- Project 1 -->
-            <div class="card project-card">
-                <div class="project-tag">2026</div>
-                <h3>Gym Landing Page</h3>
-                <p>A fully fluid, modern frontend landing system highlighting customized responsive design layouts built from scratch.</p>
-                <div class="project-tech"><span>HTML</span> <span>CSS</span></div>
-            </div>
-            <!-- Project 2 -->
-            <div class="card project-card">
-                <div class="project-tag">2025</div>
-                <h3>Smart Plant Watering System</h3>
-                <p>An IoT hardware solution engineered with ESP32 controllers and sensor telemetry arrays to auto-regulate agricultural irrigation metrics over mobile micro-apps.</p>
-                <div class="project-tech"><span>IoT</span> <span>ESP32</span> <span>Sensors</span></div>
-            </div>
-            <!-- Project 3 -->
-            <div class="card project-card">
-                <div class="project-tag">2024</div>
-                <h3>Bank Management Engine</h3>
-                <p>An administrative application executing custom financial ledger operations via unified JavaFX interfaces linked with backend databases.</p>
-                <div class="project-tech"><span>JavaFX</span> <span>MySQL</span> <span>OOP</span></div>
-            </div>
+    <section class="content-section section-wrap" id="experience">
+      <div class="section-kicker">03 / <span data-i18n="experienceKicker">FIELD EXPERIENCE</span></div>
+      <div class="section-heading"><h2 data-i18n="experienceTitle">Learning beyond <span>the classroom.</span></h2><p data-i18n="experienceText">An internship experience with Nepal Telecom, observing customer services, FTTH provisioning and field maintenance workflows.</p></div>
+      <article class="experience-card">
+        <div class="experience-top"><div><span class="pill">INTERNSHIP</span><h3>Nepal Doorsanchar Company Limited <span>(Nepal Telecom)</span></h3><p>Ranipauwa, Pokhara · Gandaki Province</p></div><div class="experience-date">MAY — AUG 2026</div></div>
+        <div class="experience-columns">
+          <div><h4 data-i18n="internshipAreas">Areas explored</h4><ul><li data-i18n="internshipOne">Networking section and network fundamentals</li><li data-i18n="internshipTwo">CRM / customer care ticket workflows</li><li data-i18n="internshipThree">FTTH provisioning and CPG processes</li><li data-i18n="internshipFour">Field maintenance and fiber connectivity</li></ul></div>
+          <div><h4 data-i18n="internshipLearning">Practical learning</h4><p data-i18n="internshipLearningText">Observed service-ticket handling, customer connectivity checks, optical fiber infrastructure and field troubleshooting, connecting networking theory with operational telecom work.</p></div>
         </div>
+      </article>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="grid-2">
-            <div class="card">
-                <h3>Let's collaborate on code</h3>
-                <p style="color: var(--text-muted); margin: 1rem 0 2rem 0;">
-                    I am actively seeking professional opportunities, internship teams, and software development groups to contribute to live engineering cycles.
-                </p>
-                <div class="contact-detail-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Phoolbari, Pokhara-11, Nepal</span>
-                </div>
-                <div class="contact-detail-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>+977 9816399547</span>
-                </div>
-                <div class="contact-detail-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>rohitnepali78@gmail.com</span>
-                </div>
-            </div>
-            <div class="card">
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message feature ready! Real handling can be bound inside script.js.');">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email Address" required>
-                    <textarea placeholder="Your Message Content Here..." rows="5" required></textarea>
+    <section class="content-section section-wrap" id="projects">
+      <div class="section-kicker">04 / <span data-i18n="projectsKicker">SELECTED WORK</span></div>
+      <div class="section-heading"><h2 data-i18n="projectsTitle">Projects with a <span>purpose.</span></h2><p data-i18n="projectsText">A selection of engineering and learning projects. Explore the interactive network tools below as well.</p></div>
+      <div class="projects-grid">
+        <article class="project-card project-feature"><div class="project-top"><span>01 / MACHINE LEARNING</span><span class="project-icon">◈</span></div><h3>CornGuard</h3><p data-i18n="cornGuardText">A mobile maize leaf disease detection concept designed to support early identification and practical guidance for farmers.</p><div class="tag-row"><span>Flutter</span><span>TensorFlow Lite</span><span>Flask</span><span>Firebase</span></div></article>
+        <article class="project-card"><div class="project-top"><span>02 / NETWORKING</span><span class="project-icon">⌘</span></div><h3>Packet Tracer Labs</h3><p data-i18n="packetText">Hands-on networking exercises covering device configuration, IP addressing, connectivity and network fundamentals.</p><div class="tag-row"><span>Cisco Packet Tracer</span><span>TCP/IP</span></div></article>
+        <article class="project-card"><div class="project-top"><span>03 / WEB</span><span class="project-icon">▤</span></div><h3>Personal Portfolio</h3><p data-i18n="portfolioText">A responsive portfolio combining engineering interests, interactive networking demonstrations and a bilingual experience.</p><div class="tag-row"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></article>
+      </div>
+    </section>
+
+    <section class="content-section section-wrap lab-section" id="network-lab">
+      <div class="section-kicker">05 / INTERACTIVE <span data-i18n="labKicker">NETWORK LAB</span></div>
+      <div class="section-heading"><h2 data-i18n="labTitle">Explore how networks <span>work.</span></h2><p data-i18n="labText">Try a few small, browser-based learning tools. These demonstrations run locally and do not connect to external networks.</p></div>
+      <div class="lab-grid">
+        <article class="lab-card">
+          <div class="lab-card-heading"><span class="lab-icon">⌗</span><div><h3 data-i18n="subnetTitle">IPv4 subnet quick check</h3><p data-i18n="subnetDesc">Calculate basic network details.</p></div></div>
+          <label for="ip-input" data-i18n="ipLabel">IPv4 address</label><input id="ip-input" value="192.168.1.10" autocomplete="off">
+          <label for="cidr-input">CIDR prefix</label><input id="cidr-input" type="number" min="0" max="32" value="24">
+          <button class="button button-primary tool-button" id="calculate-subnet" data-i18n="calculate">Calculate</button>
+          <div class="result-grid" id="subnet-results" aria-live="polite"><div><small>NETWORK</small><b>192.168.1.0</b></div><div><small>MASK</small><b>255.255.255.0</b></div><div><small>BROADCAST</small><b>192.168.1.255</b></div><div><small>USABLE HOSTS</small><b>254</b></div></div>
+        </article>
+        <article class="lab-card">
+          <div class="lab-card-heading"><span class="lab-icon">⌁</span><div><h3 data-i18n="ftthTitle">FTTH connection path</h3><p data-i18n="ftthDesc">Select a component to learn its role.</p></div></div>
+          <div class="ftth-flow"><button data-ftth="olt" class="ftth-node selected">OLT</button><span>→</span><button data-ftth="splitter" class="ftth-node">Splitter</button><span>→</span><button data-ftth="ont" class="ftth-node">ONT</button></div>
+          <div class="ftth-explain" id="ftth-explain" aria-live="polite"><strong>OLT · Optical Line Terminal</strong><p>Provider-side equipment that manages optical links to subscribers in a passive optical network.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section section-wrap contact-section" id="contact">
+      <div class="section-kicker">06 / <span data-i18n="contactKicker">START A CONVERSATION</span></div>
+      <div class="contact-panel"><div><h2 data-i18n="contactTitle">Let's connect <span>the dots.</span></h2><p data-i18n="contactText">Interested in networking, infrastructure, collaboration or an opportunity to learn and contribute? Feel free to reach out.</p></div><a class="button button-primary" href="mailto:rohitnepali78@gmail.com">rohitnepali78@gmail.com ↗</a></div>
+      <div class="social-row"><a href="https://github.com/RohitNepali2030" target="_blank" rel="noreferrer">GitHub ↗</a><span>Pokhara, Nepal</span><span>© <span id="year"></span> Rohit Nepali</span></div>
+    </section>
+  </main>
+
+  <div class="cyber-overlay" id="cyber-overlay" aria-hidden="true">
+    <div class="cyber-grid-bg"></div>
+    <div class="cyber-window">
+      <div class="cyber-titlebar"><div class="terminal-dots"><i></i><i></i><i></i></div><span>ROHIT // CYBER LAB — SIMULATION MODE</span><button id="close-cyber" aria-label="Exit cyber lab">×</button></div>
+      <div class="cyber-content">
+        <div class="cyber-intro"><span class="cyber-overline">CONTROLLED ENVIRONMENT / EDUCATIONAL DEMO</span><h2>CYBER<span>LAB_</span></h2><p data-i18n="cyberIntro">Explore a fictional network security console. Every scan and response is simulated in your browser.</p></div>
+        <div class="cyber-status"><span><i></i> SIMULATION ONLINE</span><span>NO EXTERNAL CONNECTION</span></div>
+        <div class="terminal-box"><div class="terminal-output" id="terminal-output" aria-live="polite"><p class="terminal-muted">ROHIT CYBER LAB v1.0</p><p class="terminal-muted">Type <b>help</b> to view available demo commands.</p><p class="terminal-prompt">visitor@cyberlab:~$ <span class="terminal-caret">▌</span></p></div><form id="terminal-form" class="terminal-form"><label for="terminal-input">visitor@cyberlab:~$</label><input id="terminal-input" autocomplete="off" spellcheck="false" placeholder="type help and press enter"><button type="submit">RUN ↵</button></form></div>
+        <div class="cyber-actions"><button data-command="scan">▶ Simulate network scan</button><button data-command="firewall">▣ Firewall status</button><button data-command="trace">⌁ Trace demo route</button><button data-command="clear">Clear terminal</button></div>
+        <p class="cyber-disclaimer">ETHICAL LEARNING SIMULATION · FICTIONAL HOSTS · NO REAL SCANNING OR EXPLOITATION</p>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer"><span>DESIGNED TO CONNECT.</span><span>ROHIT NEPALI · NETWORKING & INFRASTRUCTURE</span></footer>
+</body>
+</html>
